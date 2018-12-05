@@ -10,7 +10,8 @@
 <body>
 	
 	
-	<div id="result"></div>
+	
+	<div id="result">Page loading...</div>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/scripts.js"></script>
