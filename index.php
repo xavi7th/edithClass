@@ -49,7 +49,7 @@
 	
 	<div class="page">
 		<div class="calculator">
-			<form action="operation.php" method="post">
+			<form action="operation.php" method="post" id="calculator">
 				<input name="calculator__display" class="calculator__display" readonly value="0">
 				<input type="hidden" name="calculator__operation" class="calculator__operation">
 				<input type="hidden" name="calculator__first" class="calculator__first-value">
@@ -72,6 +72,7 @@
 				<button class="calculator__submit_button">Enter</button>
 				<div class="clearfix"></div>
 			</form>
+			<div id="results" style="min-height: 100px; max-width: 20%; background-color: #f5c2c2; color: #fff; margin:auto;"></div>
 		</div>
 	</div>
 

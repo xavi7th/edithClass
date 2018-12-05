@@ -34,9 +34,7 @@ $(function() {
 				 * In case you want to trigger a form submit instead of an alert
 				 */
 				// $('form').submit()
-				alert(
-					'You have chosen an operation already. Just hit the damned enter button already'
-				)
+				alert('You have chosen an operation already. Just hit the damned enter button already')
 				return
 			}
 
@@ -75,5 +73,33 @@ $(function() {
 		 * NOTE: There is a parameter inside .val()
 		 */
 		$('.calculator__display').val(newContent)
+	})
+
+	$('.calculator__submit_button').click(function(e) {
+		e.preventDefault()
+		console.log('Oops submit disabled')
+
+		/**
+		 * The serializeArray() function converts a form data to JSON so that we can send it to the server
+		 * console.log($('#calculator').serializeArray())
+		 */
+
+		/**
+		 * Sending data using post.
+		 * NOTE: Curly braces
+		 * NOTE: comma seperated
+		 * NOTE: colon seperates key and value
+		 * NOTE: key is not a string
+		 * NOTE: url is a string and it's arelative url
+		 *
+		 * INFO: This data structure is called JSON
+		 */
+		$.post('operation.php', $('#calculator').serializeArray())
+			.done(function(data) {
+				$('#results').html(data)
+			})
+			.fail(function(e) {
+				console.log(e)
+			})
 	})
 })
