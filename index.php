@@ -1,59 +1,19 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
 
-$con = mysqli_connect('localhost', 'root', '', 'edit');
+<form action="process.php" method="post">
+	<input type="text" name="name" id="" placeholder="Enter fullname"> <br>
+	<input type="text" name="initials" id="" placeholder="Enter Initials"> <br>
+	<input type="datetime-local" name="sign_in_time" id=""> <br>
+	<button type="submit">Sign In</button>
+</form>
 
-if (!$con) {
-	/**
-	 * !The connection request failed
-	 */
-
-	echo mysqli_connect_error();
-
-	exit;
-}
-
-$editSql = "INSERT INTO efua (id, name, time, initials) VALUES(2, 'Dere', '2018-11-11 12:00:01', 'et')";
-
-/**
- * Send the query to mysql
- * @param mysqli Resource $con
- * @param string $editSql
- */
-$query = mysqli_query($con, $editSql);
-if (!$query) {
-	/**
-	 * !The query request failed
-	 */
-	echo mysqli_error($con);
-	exit;
-}
-
-
-/**
- * ? Testing select queries
- */
-$editSql = "SELECT * FROM efua";
-
-/**
- * Send the query to mysql
- * @param mysqli Resource $con
- * @param string $editSql
- */
-$query = mysqli_query($con, $editSql);
-if (!$query) {
-	/**
-	 * !The query request failed
-	 */
-	echo mysqli_error($con);
-	exit;
-}
-
-/**
- * ? We retrieve our results in a loop in case there are more than one
- * * INFO: mysqli_fetch_assoc($query) gives one result at a time
- */
-while ($result = mysqli_fetch_assoc($query)) {
-	$results[] = $result;
-}
-
-print_r($results);
+</body>
+</html>
