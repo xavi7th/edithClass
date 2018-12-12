@@ -64,6 +64,26 @@ while ($result = mysqli_fetch_assoc($query)) {
 
 		<button type="submit">Enter Record</button>
 
+
+
+
+
+
+	</form>
+
+	<form action="bursar-search.php" method="post">
+
+
+		<input type="text" placeholder="Enter user name" name="search_query">
+
+
+		<button type="submit">Search</button>
+
+
+
+
+
+
 	</form>
 </body>
 </html>
